@@ -22,5 +22,5 @@ Cybersecurity and data privacy-Jimmy
 | 13.11.2024   | 0,5     | Portswigger   | Lab 2 sql injection done    |
 | 13.11.2024   | 0,5     | Portswigger   | Lab 1 NOsql injection done    |
 | 18.11.2024   | 3    | Phase 1   | database created and server.js, index.html    |
-| 13.11.2024   | 8     | Phase 1 Problem solving  | error still on, I will start Phase 1 from the beginning, Copilot can not fix the error   |
+| 19.11.2024   | 8     | Phase 1 Problem solving  | error still on, I will start Phase 1 from the beginning, Copilot can not fix the error   |
 
