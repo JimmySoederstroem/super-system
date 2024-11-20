@@ -23,4 +23,17 @@ Cybersecurity and data privacy-Jimmy
 | 13.11.2024   | 0,5     | Portswigger   | Lab 1 NOsql injection done    |
 | 18.11.2024   | 3    | Phase 1   | database created and server.js, index.html    |
 | 19.11.2024   | 8     | Phase 1 Problem solving  | error still on, I will start Phase 1 from the beginning, Copilot can not fix the error   |
+| 19.11.2024   | 7     | Phase 1 Problem solving  | Phase 1 completed   |
 
+
+# Phase 1 changes done between report 1 and 2
+| Change | Output |
+| :---         |           ---: |
+|  Content Security Policy (CSP) Header  |  Alert unsuccessfully removed despiter many different attempts    |
+| Anti-clickjacking Header   | Alert removed    |
+| MIME Type Sniffing Protection  | Alert removed    |
+| XSS Protection   | Alert removed    |
+| Referrer Policy   | Alert removed    |
+| Strict Transport Security   | Alert removed    |
+| User-Agent Header Validation   | Alert removed    |
+| Form Submission Method   | Alert removed    |
