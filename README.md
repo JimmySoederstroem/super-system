@@ -52,3 +52,4 @@ Cybersecurity and data privacy-Jimmy
 | Authentication request identified   | Alert unsuccessfully removed despiter many different attempts to ensure authentication mechaniisms are secure    |
 | CSP Notices   | Alert unsuccessfully removed despiter many different attempts to ensure csp directives are correctly implemented wiithout usiing wildcards or unsafe-inline    |
 | Modern web application   | Alert removed    |
+| Most of the alerts were very diffiicult to remove with the help of AI and when some alert was successfully removed I got some new alert.   |
