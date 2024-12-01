@@ -1,8 +1,10 @@
 import { Hono } from 'npm:hono';
 import { Client } from 'https://deno.land/x/postgres@v0.17.0/mod.ts';
-import { hash } from 'https://deno.land/x/bcrypt@v0.3.0/mod.ts';
 import { serve } from 'https://deno.land/std@0.177.0/http/server.ts';
 import { serveStatic } from 'https://deno.land/x/hono/middleware.ts';
+import { secureHeaders, NONCE } from 'npm:hono/secure-headers';
+import register from './routes/register.js';
+import login from './routes/login.js';
 
 const app = new Hono();
 const client = new Client({
@@ -15,35 +17,69 @@ const client = new Client({
 
 await client.connect();
 
-app.use('/*', serveStatic({ root: './html' }));
+// Middleware to set security headers with nonces
+app.use('*', secureHeaders({
+    contentSecurityPolicy: {
+        directives: {
+            defaultSrc: ["'self'"],
+            scriptSrc: ["'self'", `'nonce-${NONCE}'`],
+            styleSrc: ["'self'", `'nonce-${NONCE}'`],
+            imgSrc: ["'self'"],
+            connectSrc: ["'self'"],
+            fontSrc: ["'self'"],
+            objectSrc: ["'none'"],
+            frameAncestors: ["'none'"],
+            baseUri: ["'self'"],
+            formAction: ["'self'"]
+        }
+    },
+    xFrameOptions: 'DENY',
+    xContentTypeOptions: 'nosniff',
+    hsts: { maxAge: 63072000, includeSubDomains: true }
+}));
+
+// Middleware to serve static files
+app.use('/static/*', serveStatic({ root: '.' }));
 
 app.get('/', async (c) => {
     try {
         const html = await Deno.readTextFile('./html/index.html');
-        return c.html(html);
+        return c.html(html.replace(/<script/g, `<script nonce="${NONCE}"`).replace(/<style/g, `<style nonce="${NONCE}"`));
     } catch (error) {
         console.error('Error reading index.html:', error);
         return c.text('Internal Server Error', 500);
     }
 });
 
-app.post('/register', async (c) => {
+app.get('/register', async (c) => {
     try {
-        const { username, password, email, age, consent, role } = await c.req.json();
-        const consentBoolean = consent === 'on' || consent === true; // Convert consent to boolean
-        const ageInt = parseInt(age); // Convert age to integer
-        console.log({ username, password, email, age: ageInt, consent: consentBoolean, role }); // Log the received data
-
-        await client.queryArray(
-            `INSERT INTO abc123_users (username, password, email, age, consent, role) VALUES ($1, $2, $3, $4, $5, $6)`,
-            [username, password, email, ageInt, consentBoolean, role]
-        );
-        return c.json({ message: 'User registered successfully' }, 201);
+        const html = await Deno.readTextFile('./views/register.html');
+        return c.html(html.replace(/<script/g, `<script nonce="${NONCE}"`).replace(/<style/g, `<style nonce="${NONCE}"`));
     } catch (error) {
-        console.error('Registration failed:', error);
-        return c.json({ error: 'Registration failed' }, 500);
+        console.error('Error reading register.html:', error);
+        return c.text('Internal Server Error', 500);
     }
 });
 
+app.get('/login', async (c) => {
+    try {
+        const html = await Deno.readTextFile('./views/login.html');
+        return c.html(html.replace(/<script/g, `<script nonce="${NONCE}"`).replace(/<style/g, `<style nonce="${NONCE}"`));
+    } catch (error) {
+        console.error('Error reading login.html:', error);
+        return c.text('Internal Server Error', 500);
+    }
+});
+
+app.post('/register', async (c) => {
+    const formData = await c.req.json();
+    return register(c, client, formData);
+});
+
+app.post('/login', async (c) => {
+    const formData = await c.req.json();
+    return login(c, client, formData);
+});
+
 serve(app.fetch, { port: 8000 });
-console.log('Server running on http://localhost:8000');
+console.log('Server running on port 8000');

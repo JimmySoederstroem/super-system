@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/static/styles.css" nonce="${NONCE}">
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <form id="registerForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+            <label for="consent">Consent:</label>
+            <input type="checkbox" id="consent" name="consent">
+            <label for="role">Role:</label>
+            <select id="role" name="role" required>
+                <option value="reserver">Reserver</option>
+                <option value="administrator">Administrator</option>
+            </select>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <script nonce="${NONCE}">
+        document.getElementById('registerForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const formData = {
+                username: document.getElementById('username').value,
+                password: document.getElementById('password').value,
+                email: document.getElementById('email').value,
+                age: parseInt(document.getElementById('age').value),
+                consent: document.getElementById('consent').checked,
+                role: document.getElementById('role').value
+            };
+            const response = await fetch('/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+            const result = await response.json();
+            if (response.ok) {
+                window.location.href = '/';
+            } else {
+                alert(result.error);
+            }
+        });
+    </script>
+</body>
+</html>
