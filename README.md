@@ -24,7 +24,9 @@ Cybersecurity and data privacy-Jimmy
 | 18.11.2024   | 3    | Phase 1   | database created and server.js, index.html    |
 | 19.11.2024   | 8     | Phase 1 Problem solving  | error still on, I will start Phase 1 from the beginning, Copilot can not fix the error   |
 | 19.11.2024   | 7     | Phase 1 | Phase 1 completed   |
-
+| 25.11.2024   | 9     | Phase 2 | Phase 2 implemented new files and ran fiirst scan|
+| 26.11.2024   | 6     | Phase 2 | Second scan and fixes|
+| 1.12.2024   | 1     | Phase 2 | Completed and submitted|
 
 # Phase 1 changes done between report 1 and 2
 | Change | Output |
@@ -37,3 +39,16 @@ Cybersecurity and data privacy-Jimmy
 | Strict Transport Security   | Alert removed    |
 | User-Agent Header Validation   | Alert removed    |
 | Form Submission Method   | Alert removed    |
+
+# Phase 2 changes done between report 1 and 2
+| Change | Output |
+| :---         |           ---: |
+| CSP: Wildcard directive  |  Alert unsuccessfully removed despiter many different attempts to remove wildcard (*) from the CSP directiives    |
+| Anti-clickjacking Header   | Alert removed    |
+| Script unsafe-inline  | Alert unsuccessfully removed despiter many different attempts to replace unsafe-inliiine with nonces for scripts    |
+| Style src unsafe-inline  | Alert unsuccessfully removed despiter many different attempts to replace unsafe-inlinewith nonces styles    |
+| Informatiion Disclosure   | Alert unsuccessfully removed despiter many different attempts to ensure sensitive data is not passed in URLs by using post request for sensitive data    |
+| User controllable HTML element attribute   | Alert unsuccessfully removed despiter many different attempts to ensure user inputs are sanitiized to prevent XSS attacks    |
+| Authentication request identified   | Alert unsuccessfully removed despiter many different attempts to ensure authentication mechaniisms are secure    |
+| CSP Notices   | Alert unsuccessfully removed despiter many different attempts to ensure csp directives are correctly implemented wiithout usiing wildcards or unsafe-inline    |
+| Modern web application   | Alert removed    |
