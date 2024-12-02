@@ -42,7 +42,7 @@ Cybersecurity and data privacy-Jimmy
 
 # Phase 2 changes done between report 1 and 2
 | Change | Output |
-| [Report Before fix](https://github.com/JimmySoederstroem/super-system/edit/main/Index_login_register_before_fix-.md) | [Report After fix]https://github.com/JimmySoederstroem/super-system/blob/main/Phase2_after_fiix.md |
+| [Report Before fix](https://github.com/JimmySoederstroem/super-system/edit/main/Index_login_register_before_fix-.md) | [Report After fix](https://github.com/JimmySoederstroem/super-system/blob/main/Phase2_after_fiix.md) |
 | :---         |           ---: |
 | CSP: Wildcard directive  |  Alert unsuccessfully removed despiter many different attempts to remove wildcard (*) from the CSP directiives    |
 | Anti-clickjacking Header   | Alert removed    |
