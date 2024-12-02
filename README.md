@@ -42,6 +42,7 @@ Cybersecurity and data privacy-Jimmy
 
 # Phase 2 changes done between report 1 and 2
 | Change | Output |
+| Change | Output |
 | :---         |           ---: |
 | CSP: Wildcard directive  |  Alert unsuccessfully removed despiter many different attempts to remove wildcard (*) from the CSP directiives    |
 | Anti-clickjacking Header   | Alert removed    |
