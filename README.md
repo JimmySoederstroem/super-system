@@ -27,6 +27,7 @@ Cybersecurity and data privacy-Jimmy
 | 25.11.2024   | 9     | Phase 2 | Phase 2 implemented new files and ran fiirst scan|
 | 26.11.2024   | 6     | Phase 2 | Second scan and fixes|
 | 1.12.2024   | 1     | Phase 2 | Completed and submitted|
+| 1.12.2024   | 5     | Phase 3 | Reviewing my code, ran zap scans and found possible vulnerabilities and solutions to them|
 
 # Phase 1 changes done between report 1 and 2
 | Change | Output |
@@ -54,3 +55,6 @@ Cybersecurity and data privacy-Jimmy
 | CSP Notices   | Alert unsuccessfully removed despiter many different attempts to ensure csp directives are correctly implemented wiithout usiing wildcards or unsafe-inline    |
 | Modern web application   | Alert removed    |
 | Most of the alerts were very diffiicult to remove with the help of AI and when some alert was successfully removed I got some new alert.   |
+
+# Phase 3
+
