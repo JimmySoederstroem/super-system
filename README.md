@@ -57,4 +57,4 @@ Cybersecurity and data privacy-Jimmy
 | Most of the alerts were very diffiicult to remove with the help of AI and when some alert was successfully removed I got some new alert.   |
 
 # Phase 3
-
+https://github.com/JimmySoederstroem/super-system/blob/main/Phase3.md
