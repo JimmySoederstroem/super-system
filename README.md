@@ -28,6 +28,12 @@ Cybersecurity and data privacy-Jimmy
 | 26.11.2024   | 6     | Phase 2 | Second scan and fixes|
 | 1.12.2024   | 1     | Phase 2 | Completed and submitted|
 | 1.12.2024   | 5     | Phase 3 | Reviewing my code, ran zap scans and found possible vulnerabilities and solutions to them|
+| 10.12.2024   | 9     | Phase 4 | Started phase 4 and everything went fine until the last step where I did not get my code to work so I decided to try the code provided and in the end all my code was so messed up that nothing worked anymore so I could not complete phase 4|
+| 15.12.2024   | 0,5     | Portswigger   | Lab 4 access control done    |
+| 15.12.2024   | 0,5     | Portswigger   | Lab 5 access control done    |
+| 15.12.2024   | 0,5     | Portswigger   | Lab 6 access control done    |
+| 15.12.2024   | 1     | Final Phase   | Report done    |
+
 
 # Phase 1 changes done between report 1 and 2
 | Change | Output |
